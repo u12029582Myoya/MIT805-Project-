@@ -1,0 +1,17 @@
+from pyspark import SparkConf, SparkContext
+
+def loadEvent():
+    event_type = {}
+    with open("october.csv") as oct:
+        for line in oct:
+            event = line.split('/t')
+            event_type[int(event[0])] = event[1]
+    return event_type
+
+def parseInput(line):
+    fields = line.split()
+    return(int(fields[1]), 1.0)
+
+event_type = loadEvent()
+lines = sc.textFile("hdfs://user/maria_dev/october.txt")
+eventCount = lines.map(parseInput)

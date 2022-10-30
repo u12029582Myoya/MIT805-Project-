@@ -1,0 +1,6 @@
+SELECT brand, count(brand) as brandCount
+FROM october 
+WHERE event_type == 'purchase'
+GROUP BY brand
+ORDER BY brandCount
+DESC;

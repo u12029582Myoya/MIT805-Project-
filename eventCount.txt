@@ -1,0 +1,5 @@
+SELECT event_type, count(event_type) as event
+FROM october 
+GROUP BY event_type
+ORDER BY event
+ASC;

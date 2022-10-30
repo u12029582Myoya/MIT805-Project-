@@ -1,0 +1,6 @@
+SELECT category_code, count(category_code) as categoryCount
+FROM october 
+WHERE event_type == 'purchase'
+GROUP BY category_code
+ORDER BY categoryCount
+DESC;

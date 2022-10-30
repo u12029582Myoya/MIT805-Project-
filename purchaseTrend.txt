@@ -1,0 +1,5 @@
+SELECT event_time, count(event_time) as eventTime
+FROM october 
+WHERE event_type == 'purchase' 
+GROUP BY event_time
+ORDER BY event_time;
